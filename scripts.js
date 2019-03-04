@@ -1,13 +1,23 @@
-// Create a request variable and assign a new XMLHttpRequest object to it.
-var request = new XMLHttpRequest();
+function bookSearch(query) {
 
-// Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
+    console.log("query: " + query);
 
-request.onload = function () {
-  // Begin accessing JSON data here
-  }
+    var request = new XMLHttpRequest();
+    strAPI_head = "https://www.googleapis.com/books/v1/volumes?q=";
+    strAPI_tail = "=full&key=AIzaSyB1MYJPUGXWOx13zt6fZY0zP4oiElQNezw";
+
+    console.log("searchRequest: " + strAPI_head.concat(query, strAPI_tail));
+
+    request.open('GET', strAPI_head.concat(query, strAPI_tail));
+
+    // Begin accessing JSON data here
+    var data = JSON.parse(this.request);
+
+    console.log("data: " + data);
+
+    for (var i = 0; i < data.items.length; i++) {
+        var item = data.items[i];
+        console.log(item.volumeInfo.title);
+    }
+
 }
-
-// Send request
-request.send();
