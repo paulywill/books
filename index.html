@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
   
   <head>
@@ -8,7 +7,7 @@
     <title>paulywill's Books API Example</title>
   
     <link href="style.css" rel="stylesheet">
-    <script src="scripts.js"></script>
+   
   </head>
   
   <body>
@@ -16,18 +15,16 @@
     <div id="root"></div>
     
     
-      
-    <form onsubmit="bookSearch(book.value)">
-      Search for books: <input type="text" name="book">
-      <input type="submit" value="Submit">
+    <form>
+        Search for books: <input id="title" type="text">
+        <button class="search-book">Submit</button> 
+  
     </form>
 
-  
 
+    <div id="content"></div>
 
-  
-<div id="content"></div>
-
-    
+<script src="scripts.js"></script>
+<script src="test.js"></script>
   </body>
 </html>
