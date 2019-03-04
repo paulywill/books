@@ -7,7 +7,6 @@ function handleClick() {
 }
 
 
-
 function convertHTML(str) {
     newStr = str.replace(/ /g, "+");
     return newStr
@@ -20,7 +19,6 @@ function getBook() {
     let title = convertHTML(titleHolder)
     console.log("the title: " + title);
     url = `https://www.googleapis.com/books/v1/volumes?q=${title}&projection=full&key=${apiKey}`
-    //url = `https://www.googleapis.com/books/v1/volumes?q=${title}&projection=full`
     console.log("url: " + url);
 
 
@@ -28,13 +26,33 @@ function getBook() {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log('hello')
-            console.log(data) // Prints result from `response.json()` in getRequest
+            let items = data.items;
+            console.log(data.items); 
+            for (var i = 0; i < items.length; i++) {
+                
+                // Volume info
+                let item = items[i].volumeInfo;
+                console.log("items[i].volumeInfo: " + items[i].volumeInfo);
+
+                // Author
+                let author = item.authors;
+                console.log("item.authors: " + item.authors);
+    
+                // Image link
+                let imgLink = item.imageLinks.thumbnail;
+                console.log("item.imageLinks.thumbnail: " + item.imageLinks.thumbnail);
+
+                // Title
+                let title = item.title;
+                console.log("item.title: " + item.title);
+            }    
+        
         })
         .catch(error => {
             console.log(error);
         });
 
+    
          
 
-    }
+}
