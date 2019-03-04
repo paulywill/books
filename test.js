@@ -32,8 +32,7 @@ function getBook() {
                 
                 // Volume info
                 let item = items[i].volumeInfo;
-                console.log("items[i].volumeInfo: " + items[i].volumeInfo);
-
+        
                 // Author
                 let author = item.authors;
                 console.log("item.authors: " + item.authors);
@@ -45,6 +44,32 @@ function getBook() {
                 // Title
                 let title = item.title;
                 console.log("item.title: " + item.title);
+
+                // Publishing Company
+                let publisher = item.publisher;
+                console.log("item.publisher: " + item.publisher);
+
+                // Published Date
+                let publishedDate = item.publishedDate;
+                console.log("item.publisher: " + item.publishedDate);
+                
+                // Info Link  Date
+                let infoLink = item.infoLink;
+                console.log("item.publisher: " + item.infoLink);
+                
+
+
+
+                document.getElementById("content").innerHTML 
+                += '<div class="card"><br>' + 
+                '<img src=' + imgLink + '><br>' +
+                author + '<br>' + 
+                title + '<br>' +
+                publisher + '<br>' +
+                publishedDate + '<br>' +
+                '<a href='+ infoLink + '>More Info</a></div>';
+
+           
             }    
         
         })
