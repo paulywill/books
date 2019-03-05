@@ -16,17 +16,16 @@
   <body>
     <h1>Books!</h1>
     <div id="root"></div>
-    
-    
-  <form onsubmit="handleClick(); return false;">
-        Search for books: <input id="title" type="text">
-        <button class="search-book">Submit</button> 
-  
-    </form>
 
+  
+    <form id="search-form" onsubmit="handleClick(); return false;">
+      Search for books: <input id="title" type="text">
+      <button class="search-book">Submit</button> 
+    
+    </form>
+  
 
     <div class="container" id="content"></div>
-
 
     <script src="scripts.js"></script>
   </body>
