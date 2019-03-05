@@ -1,4 +1,4 @@
-
+document.querySelector('.search-book').addEventListener('click', getBook);
 const apiKey = 'AIzaSyB1MYJPUGXWOx13zt6fZY0zP4oiElQNezw'
 
 function clearBox(elementID) {
