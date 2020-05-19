@@ -1,5 +1,5 @@
 document.querySelector('.search-book').addEventListener('click', getBook);
-const apiKey = 'AIzaSyB1MYJPUGXWOx13zt6fZY0zP4oiElQNezw'
+//const apiKey = 'AIzaSyB1MYJPUGXWOx13zt6fZY0zP4oiElQNezw'
 
 function clearBox(elementID) {
     document.getElementById(elementID).innerHTML = "";
@@ -22,7 +22,7 @@ function getBook() {
         return false;
     }else{
         let title = convertHTML(titleHolder)
-        url = `https://www.googleapis.com/books/v1/volumes?q=${title}&projection=full&key=${apiKey}`
+        url = `https://www.googleapis.com/books/v1/volumes?q=${title}&projection=full`
         fetch(url)
             .then(response => response.json())
             .then(data => {
